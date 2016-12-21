@@ -4,13 +4,15 @@ import VueRouter from 'vue-router';
 
 import Home from './components/home';
 import About from './components/about';
+import Email from './components/email/email.vue';
 import MainNav from './components/main-nav';
 
 Vue.use(VueRouter);
 
 const routes = [
   { path: '/',  component: Home},
-  { path: '/about', component: About}
+  { path: '/about', component: About},
+  { path: '/email', component: Email}
   ]
 
 const router = new VueRouter({
