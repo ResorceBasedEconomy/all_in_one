@@ -2,7 +2,7 @@
   <div id="app">
       <h1>E-mail App</h1>
       <div class="felx-wrap">
-        <email-list :emails="emails" class="email-list" 
+        <email-list :emails="emails" class="email-list"
                                      @showEmail="showEmail">
         </email-list>
         <email-details class="email-details" :email="email"
@@ -11,7 +11,6 @@
       </div>
       <email-status :mails="emails.length"
                     :unreads="unreadCounter">
-
       </email-status>
 
 </template>
@@ -29,7 +28,10 @@ export default {
       emails: [
         {id: 1, subject: 'work', body: 'work work work', isRead: false },
         {id: 2, subject: 'advertisment', body: 'New Year Sale!', isRead: false },
-        {id: 3, subject: 'fun', body: 'fun fun fun!', isRead: false }
+        {id: 3, subject: 'fun', body: 'fun fun fun!', isRead: false },
+        {id: 4, subject: 'get the new Vue.js Today!', body: 'Take a look', isRead: false },
+        {id: 5, subject: 'Puki Support center', body: 'yep yep yep', isRead: false },
+        {id: 6, subject: 'Muki shop', body: 'fun fun fun!', isRead: false },
       ],
       email: {},
       unreadCounter: 0

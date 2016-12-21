@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <div class="flex-wrap space-between">
-      <h1>Details</h1>
+      <h1>subject : {{email.subject}}</h1>
       <button class="button" @click="deleteEmail">X</button>
     </div>
     <p class="subject">subject : {{email.subject}}</p>
