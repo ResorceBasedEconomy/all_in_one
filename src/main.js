@@ -6,12 +6,14 @@ import Home from './components/home';
 import About from './components/about';
 import Email from './components/email/email.vue';
 import MainNav from './components/main-nav';
+import Events from './components/events';
 
 Vue.use(VueRouter);
 
 const routes = [
   { path: '/',  component: Home},
   { path: '/about', component: About},
+  { path: '/events', component: Events},
   { path: '/email', component: Email}
   ]
 
