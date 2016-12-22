@@ -1,15 +1,16 @@
 <template>
     <section>
-        <h1 class="title">Event List</h1>
-        <ul>
-            <li v-for="currEventData in eventListData">
+        <h1 class="title">{{currDay}}</h1>
+            
+            <div v-for="currEventData in eventListData">
                 <event-preview :eventData="currEventData"></event-preview>
-            </li>
-        </ul>
+            </div>
+
     </section>
 </template>
 
 <script>
+    import moment from 'moment';
     import EventPreview from "./event.preview.vue";
     export default {
         props: {
@@ -19,7 +20,7 @@
         },
         data() {
             return {
-
+                currDay: moment(this.eventListData[0].time).format("DD/MM/YY")
             }
         },
         components: {

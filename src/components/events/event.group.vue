@@ -1,13 +1,13 @@
 <template>
     <section>
         <h1>Event Group</h1>
-        <ul>
-            <li v-for="(currGroup, idx) in eventsDataGroup">
+
+            <div v-for="(currGroup, idx) in eventsDataGroup">
                 <event-list :eventListData="currGroup">
 
                 </event-list>
-            </li>
-        </ul>
+            </div>
+
     </section>
 </template>
 
@@ -30,7 +30,6 @@
                     else acc[moment(event.time).format("DD/MM/YY")].push(event);
                     return acc;
                 }, {})
-                console.log(this.eventsByGroup);
             }
         },
         created() {

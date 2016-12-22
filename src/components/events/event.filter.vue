@@ -18,7 +18,7 @@
         methods: {
             emitFilter(inputValue) {
                 let filteredEvents = this.eventsData.filter((event) => {
-                    return event.name.indexOf(inputValue);
+                    return event.name.includes(inputValue);
                 });
 
                 this.$emit('filterDataChanged', filteredEvents);

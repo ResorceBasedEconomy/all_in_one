@@ -1,7 +1,7 @@
 <template>
     <section >
-        {{eventData.name}}
-        <h1 class="title">Event Preview</h1>
+        
+        <h1 class="title">{{eventData.name}}</h1>
         <!--<img :src="`src/assets/car/${car.id}.png`" alt="">-->
         <!--<button @click.stop="deleteEvent">Delete</button>-->
        <!--<router-link :to="`/car/${car.id}/edit`">Edit</router-link>-->

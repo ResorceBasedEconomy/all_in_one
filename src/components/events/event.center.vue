@@ -17,36 +17,6 @@
         data() {
             return {
                 filteredEventData: [],
-                eventsData: [
-                    {
-                        name: 'New Years Eve', status: 'future',
-                        description: 'best party in town',
-                        venue: 'Yedidya Frenkel, Florentin, Tel-Aviv',
-                        time: 1483218797945,
-                        linkToOrigin: '//www.facebook.com/events/1653088681383412/'
-                    },
-                    {
-                        name: '?מה טומן בחובו העתיד', status: 'future',
-                        description: 'הרצאה',
-                        venue: 'Yedidya Frenkel, Florentin, Tel-Aviv',
-                        time: 1481218797945,
-                        linkToOrigin: '//www.facebook.com/events/1248083765286078/'
-                    },
-                    {
-                        name: 'Jungle Concert', status: 'future',
-                        description: 'best party in town',
-                        venue: 'Yedidya Frenkel, Florentin, Tel-Aviv',
-                        time: 1483118797945,
-                        linkToOrigin: '//www.facebook.com/events/1653088681383412/'
-                    },
-                    {
-                        name: 'New Years Eve', status: 'future',
-                        description: 'best party in town',
-                        venue: 'Yedidya Frenkel, Florentin, Tel-Aviv',
-                        time: 1483218797945,
-                        linkToOrigin: '//www.facebook.com/events/1653088681383412/'
-                    }
-                ]
             }
         },
 
