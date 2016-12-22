@@ -1,22 +1,31 @@
 <template>
     <section>
         <h2>Filter</h2>
-        <input type="text" @keyup.enter="emitFilter" v-model.lazy="filter.name">
+        <input type="text" @keyup="emitFilter($event.target.value)">
     </section>
 </template>
 
 
 <script>
+
     export default {
+        props: ['eventsData'],
         data() {
             return {
-                filter: {name: ''}
+             
             }
         },
         methods: {
-            emitFilter() {
-                this.$emit('filterChanged', this.filter);
+            emitFilter(inputValue) {
+                let filteredEvents = this.eventsData.filter((event) => {
+                    return event.name.indexOf(inputValue);
+                });
+
+                this.$emit('filterDataChanged', filteredEvents);
             }
+        },
+        mounted: function() {
+            this.emitFilter();
         }
     }
 

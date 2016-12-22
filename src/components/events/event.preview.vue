@@ -1,6 +1,6 @@
 <template>
-    <section :class="{selected: event.isSelected}">
-        {{event.name}}
+    <section >
+        {{eventData.name}}
         <h1 class="title">Event Preview</h1>
         <!--<img :src="`src/assets/car/${car.id}.png`" alt="">-->
         <!--<button @click.stop="deleteEvent">Delete</button>-->
@@ -11,14 +11,14 @@
 <script>
     export default {
         props: {
-            event: {
+            eventData: {
                 required: true,
                 type: Object
             },
         },
         data(){
             return {
-              isSelected: false
+            //   isSelected: false
             }
         },
         methods: {
