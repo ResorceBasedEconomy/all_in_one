@@ -17,15 +17,25 @@
         },
         methods: {
             emitFilter(inputValue) {
-                let filteredEvents = this.eventsData.filter((event) => {
-                    return event.name.includes(inputValue);
-                });
+                let filteredEvents;
+                if(inputValue) {
+                    filteredEvents = this.eventsData.filter((event) => {
+                        return event.name.toLowerCase().includes(inputValue.toLowerCase());
+                    });
+                } else {
+                    filteredEvents = this.eventsData;
+                }
+                
 
                 this.$emit('filterDataChanged', filteredEvents);
             }
         },
+        watch: {
+            eventsData: function() {              
+                this.emitFilter();
+            }
+        },
         mounted: function() {
-            this.emitFilter();
         }
     }
 

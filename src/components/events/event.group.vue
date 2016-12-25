@@ -1,12 +1,11 @@
 <template>
-    <section>
-        <h1>Event Group</h1>
+    <section >
+        <div  class="event-group" v-for="(currGroup, idx) in eventsDataGroup">
+            <event-list  :eventListData="currGroup"
+                         @selectEvent="$emit('selectEvent', $event)">
 
-            <div v-for="(currGroup, idx) in eventsDataGroup">
-                <event-list :eventListData="currGroup">
-
-                </event-list>
-            </div>
+            </event-list>
+        </div>
 
     </section>
 </template>
@@ -18,26 +17,29 @@
         props: ['eventsData'],
         data() {
             return {
+
             }
         },
+     
         components: {
             EventList
         },
         computed: {
-            eventsDataGroup: function() {
+            eventsDataGroup: function () {
+                this.eventsData.sort((a,b) => a.time - b.time);
+
                 return this.eventsData.reduce((acc, event) => {
                     if (!acc[moment(event.time).format("DD/MM/YY")]) acc[moment(event.time).format("DD/MM/YY")] = [event];
                     else acc[moment(event.time).format("DD/MM/YY")].push(event);
                     return acc;
                 }, {})
             }
-        },
-        created() {
-            //this.filterByDate();
         }
     }
 </script>
 
 <style scoped>
-
+    .event-group {
+        background-color: #f7f7f7
+    }
 </style>

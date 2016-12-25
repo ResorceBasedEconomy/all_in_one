@@ -1,9 +1,12 @@
 <template>
-    <section>
-        <h1 class="title">{{currDay}}</h1>
+    <section class="event-list box">
+        <h3 class="title">{{currDay}}</h3>
             
             <div v-for="currEventData in eventListData">
-                <event-preview :eventData="currEventData"></event-preview>
+                <event-preview @selectEvent="$emit('selectEvent', $event)" 
+                               :eventData="currEventData"
+                               @click.stop.native="$emit('selectEvent',currEventData.id)">
+                </event-preview>
             </div>
 
     </section>
@@ -30,7 +33,13 @@
 </script>
 
 <style scoped>
-    .title {
-        background-color: purple;
+
+    .title {    
+        width:100%;
+        padding-left: 15px;
+    }
+   .event-list {
+        display: flex;
+        flex-wrap: wrap;
     }
 </style>
